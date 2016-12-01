@@ -3,6 +3,7 @@ package org.bbelovic.jpwh;
 import org.bbelovic.jpwh.ch14.LoggingListener;
 import org.hibernate.annotations.*;
 import org.hibernate.envers.Audited;
+import org.hibernate.envers.NotAudited;
 
 import javax.persistence.*;
 import javax.persistence.CascadeType;
@@ -25,6 +26,10 @@ import static org.hibernate.annotations.LazyCollectionOption.EXTRA;
 )
 @EntityListeners({LoggingListener.class})
 @Audited
+@FilterDef(name = "limitByLumberJack",
+        defaultCondition = ":name = (select lj.name from LumberJack lj where lj.id = lumberjack_id)",
+        parameters = @ParamDef(name = "name", type = "java.lang.String")
+)
 public class Tree implements Serializable {
     private static final String TREE_ID_SEQ = "tree_id_seq";
 
@@ -62,6 +67,7 @@ public class Tree implements Serializable {
     }
 
     @ManyToOne
+    @NotAudited
     public Forest getForest() {
         return forest;
     }
@@ -71,6 +77,7 @@ public class Tree implements Serializable {
     }
 
     @ManyToOne
+    @NotAudited
     public LumberJack getLumberJack() {
         return lumberJack;
     }

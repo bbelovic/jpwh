@@ -12,6 +12,8 @@
 
         <class>org.bbelovic.jpwh.ch13.Item</class>
         <class>org.bbelovic.jpwh.ch13.Bid</class>
+        <class>org.bbelovic.jpwh.Forest</class>
+        <class>org.bbelovic.jpwh.LumberJack</class>
         <class>org.bbelovic.jpwh.Tree</class>
         <class>org.bbelovic.jpwh.Branch</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
