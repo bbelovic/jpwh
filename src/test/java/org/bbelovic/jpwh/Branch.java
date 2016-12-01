@@ -10,6 +10,10 @@ import java.io.Serializable;
 
 import static javax.persistence.GenerationType.SEQUENCE;
 
+/**
+ * Dummy
+ *
+ */
 @Entity
 @Table(name = "branch")
 @Audited
