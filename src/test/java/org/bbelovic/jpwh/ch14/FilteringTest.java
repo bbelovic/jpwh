@@ -43,6 +43,5 @@ public class FilteringTest extends PersistenceTest {
         Assert.assertEquals(3, forest.getTrees().size());
         entityManager.getTransaction().commit();
         entityManager.close();
-
     }
 }
